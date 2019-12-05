@@ -1,0 +1,40 @@
+<div>
+    <nav>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">
+            Tasty Snacks
+            </a>
+        </li>
+        <li class="breadcrumb-item active">
+            {{product.name}}
+            
+        </li>
+        </ol>
+    </nav>
+    <div class="container p-5 bg-light">
+        <div class="d-flex">
+        <div class="mr-4">
+            <img class="product-image" src="http://johnlawrimore.com/smu/{{product.imageName}}" />
+        </div>
+        <div>
+            <h1 class="font-weight-light">{{product.name}}</h1>
+            <span class="badge badge-primary badge-lg">
+            ${{product.price}}
+            </span>
+            <p class="text-muted mt-4">
+            {{product.description}}
+            </p>
+        </div>
+        </div>
+    </div>
+
+
+    <!--need to pass account through here -->
+    <store-review-list [reviewListProduct] = "product"></store-review-list>
+
+
+    <store-review-form></store-review-form>
+
+
+</div>

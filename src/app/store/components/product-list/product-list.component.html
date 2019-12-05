@@ -1,0 +1,33 @@
+<div>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Tasty snacks</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <ng-container *ngIf = "(productPromise | async) as products">
+            <div class="col-4" *ngFor = "let product of products">
+                <div class="card text-center">
+                <div class="card-body">
+                        <div>
+                        <img style="max-height: 200px; max-width: 150px;" class="card-img-top" src="http://johnlawrimore.com/smu/{{product.imageName}}" alt="product.name" />
+                            <span class="badge badge-pill badge-success" style="position: absolute, top: 140px;">
+                                ${{product.price}}
+                            </span>
+                        </div>
+                        <h5 style="min-height: 48px">
+                            {{product.name}}
+                        </h5>
+                        <a [routerLink]="['../', product.id]" class="btn btn-block btn-info">
+                            Product Details
+                        </a>
+                        <a href="#"
+                            class="btn btn-block btn-warning">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
