@@ -4,10 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import * as components from './components';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'list', pathMatch: 'full' },
+  { path: 'cart', component: components.CartComponent },
   { path: 'list', component: components.ProductListComponent },
   { path: ':productId', component: components.ProductDetailsComponent },
-//   { path: '**', component: components.NotFoundComponent },
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
+  
 ];
 
 @NgModule({

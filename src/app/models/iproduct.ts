@@ -9,7 +9,7 @@ export interface IProduct {
 
 export interface IReview{
     userName : string;
-    rating : string;
+    rating : number;
     comment : string;
-    date : string;
+    date : number;
 }

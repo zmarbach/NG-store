@@ -1,0 +1,36 @@
+<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a [routerLink] = "['../']" class="navbar-brand">Store</a>
+        <div class="mr-auto"></div>
+</header>
+
+
+<div class="m-3">
+    <div class="card border-primary">
+        <div class="card-header text-center ">
+            <div class="my-cart"><b>MyCart</b></div>
+        </div>
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Qty</th>
+                    <th>Product</th>
+                    <th class="text-right">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[[CART_ITEM_QUANTITY]]</td>
+                    <td>[[CART_ITEM_PRODUCT_NAME]] - <span class="text-muted">$[[CART_ITEM_PRODUCT_PRICE]]/each</span></td>
+                    <td class="text-right">[[CART_ITEM_TOTAL_PRICE]]</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colSpan="4" class="text-right">
+                        <b>[[CART_TOTAL]]</b>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    </div>

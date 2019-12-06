@@ -1,3 +1,8 @@
+<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a [routerLink] = "['../']" class="navbar-brand">Store</a>
+        <div class="mr-auto"></div>
+</header>
+
 <div>
     <nav>
         <ol class="breadcrumb">
@@ -7,7 +12,7 @@
             </a>
         </li>
         <li class="breadcrumb-item active">
-            {{product.name}}
+            {{product?.name}}
             
         </li>
         </ol>
@@ -15,15 +20,15 @@
     <div class="container p-5 bg-light">
         <div class="d-flex">
         <div class="mr-4">
-            <img class="product-image" src="http://johnlawrimore.com/smu/{{product.imageName}}" />
+            <img class="product-image" src="http://johnlawrimore.com/smu/{{product?.imageName}}" />
         </div>
         <div>
-            <h1 class="font-weight-light">{{product.name}}</h1>
+            <h1 class="font-weight-light">{{product?.name}}</h1>
             <span class="badge badge-primary badge-lg">
-            ${{product.price}}
+            ${{product?.price}}
             </span>
             <p class="text-muted mt-4">
-            {{product.description}}
+            {{product?.description}}
             </p>
         </div>
         </div>
@@ -34,7 +39,7 @@
     <store-review-list [reviewListProduct] = "product"></store-review-list>
 
 
-    <store-review-form></store-review-form>
+    <store-review-form (submitReview) = addNewReview($event)></store-review-form>
 
 
 </div>

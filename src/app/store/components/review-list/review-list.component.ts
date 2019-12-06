@@ -10,9 +10,24 @@ export class ReviewListComponent implements OnInit {
 
   @Input() reviewListProduct: IProduct;
 
+
+  get numOfReviews() : number{  
+    if(this.reviewListProduct && this.reviewListProduct.reviews){
+    return this.reviewListProduct.reviews.length;
+  } 
+}
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  // ngOnChanges(){
+  //   this.reviewListProduct
+  // }
+
+
+
 }
+
+

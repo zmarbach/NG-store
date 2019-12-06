@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/models';
+import { Product, IReview } from 'src/app/models';
 
 @Component({
   selector: 'store-product-details',
@@ -20,6 +20,10 @@ export class ProductDetailsComponent implements OnInit {
 
     this.productService.getProductById(this.productId)
       .then((product) => {this.product = product})
+  }
+
+  addNewReview(review: IReview){
+    this.product.reviews.push(review);
   }
 
 }
