@@ -18,19 +18,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>[[CART_ITEM_QUANTITY]]</td>
-                    <td>[[CART_ITEM_PRODUCT_NAME]] - <span class="text-muted">$[[CART_ITEM_PRODUCT_PRICE]]/each</span></td>
-                    <td class="text-right">[[CART_ITEM_TOTAL_PRICE]]</td>
+                <tr *ngFor = "let item of cart.items">
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.product.name}} <span class="text-muted">${{item.product.price}}/each</span></td>
+                    <td class="text-right">${{item.totalPrice}}</td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <td colSpan="4" class="text-right">
-                        <b>[[CART_TOTAL]]</b>
+                        <b>Total: {{cart.total | currency}}</b>
                     </td>
                 </tr>
             </tfoot>
         </table>
     </div>
+    <br/>
+
+    <div style = "float: left">
+            <a [routerLink]="['../', 'list']" class="btn btn-warning btn-lg">Keep Shopping!</a>
+        </div>
     </div>
+    

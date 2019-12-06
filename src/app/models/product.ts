@@ -4,7 +4,7 @@ export class Product implements IProduct {
   id: number;
   name: string;
   description: string;
-  price: string;
+  price: number;
   imageName: string;
   reviews: IReview[];
 

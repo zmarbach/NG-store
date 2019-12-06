@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreRoutingModule } from './store-routing.module';
 
 import * as components from './components';
-// import { SharedModule } from '../shared';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import * as components from './components';
     StoreRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // SharedModule
   ]
 })
 export class StoreModule { }

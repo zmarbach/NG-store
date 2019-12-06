@@ -32,10 +32,12 @@
             </p>
         </div>
         </div>
+        <a (click) = "addItemToCart()"  [routerLink]="['../', 'cart']"
+            class="btn btn-block btn-warning">
+            Add to Cart
+        </a>
     </div>
 
-
-    <!--need to pass account through here -->
     <store-review-list [reviewListProduct] = "product"></store-review-list>
 
 

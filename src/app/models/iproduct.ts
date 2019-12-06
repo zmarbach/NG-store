@@ -2,7 +2,7 @@ export interface IProduct {
     id: number;
     name: string;
     description : string;
-    price : string;
+    price : number;
     imageName : string;
     reviews : IReview[];
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Product, IReview } from 'src/app/models';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'store-product-details',
@@ -12,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   productId : number;
   product: Product;
 
-  constructor(private productService : ProductService, private route: ActivatedRoute) { }
+  constructor(private productService : ProductService, private route: ActivatedRoute, private cartService: CartService) { }
 
   ngOnInit() {
     const params = this.route.snapshot.params;
@@ -24,6 +25,10 @@ export class ProductDetailsComponent implements OnInit {
 
   addNewReview(review: IReview){
     this.product.reviews.push(review);
+  }
+
+  addItemToCart(){
+    this.cartService.addToCart(this.product);
   }
 
 }

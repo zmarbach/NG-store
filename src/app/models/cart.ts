@@ -1,4 +1,4 @@
-import { ICart, ICartItem } from './icart'
+import { ICart, ICartItem } from '../models'
 
 export class Cart implements ICart{
     items: ICartItem[];
