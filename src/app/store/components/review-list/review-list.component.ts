@@ -22,12 +22,6 @@ export class ReviewListComponent implements OnInit {
   ngOnInit() {
   }
 
-  // ngOnChanges(){
-  //   this.reviewListProduct
-  // }
-
-
-
 }
 
 

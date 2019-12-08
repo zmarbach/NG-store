@@ -1,7 +1,7 @@
 <div class="mt-3">
         <div class="d-flex">
           <h4>Product Reviews</h4>
-          <h4 class="ml-2 text-muted">{{numOfReviews}}</h4>
+          <h4 class="ml-2 text-muted">({{numOfReviews}})</h4>
         </div>
         <ng-container *ngTemplateOutlet = "numOfReviews === 0 ? noReviews : reviews"></ng-container>
         <ng-template #noReviews>

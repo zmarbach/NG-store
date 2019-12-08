@@ -1,6 +1,12 @@
-<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="navbar navbar-expand-lg navbar-dark bg-dark row">
+    <div class="col-6 bg-primary rounded border border-warning">
         <a [routerLink] = "['../']" class="navbar-brand">Store</a>
-        <div class="mr-auto"></div>
+    </div>
+    <div class="col-6">
+        <div class="row justify-content-end">
+            <store-basket></store-basket>
+        </div>
+    </div>
 </header>
 
 <div>
@@ -15,8 +21,10 @@
                 <div class="card text-center">
                 <div class="card-body">
                         <div>
-                        <img style="max-height: 200px; max-width: 150px;" class="card-img-top" src="http://johnlawrimore.com/smu/{{product.imageName}}" alt="product.name" />
-                            <span class="badge badge-pill badge-success" style="position: absolute, top: 140px;">
+                        <a [routerLink]="['../', product.id]">
+                            <img style="max-height: 200px; max-width: 150px;" class="card-img-top" src="http://johnlawrimore.com/smu/{{product.imageName}}" alt="product.name" />
+                         </a>
+                        <span class="badge badge-pill badge-success" style="position: absolute, top: 140px;">
                                 ${{product.price}}
                             </span>
                         </div>
@@ -26,7 +34,7 @@
                         <a [routerLink]="['../', product.id]" class="btn btn-block btn-info">
                             Product Details
                         </a>
-                        <a (click) = "addItem(product)"  [routerLink]="['../', 'cart']"
+                        <a (click) = "addItem(product)"  [routerLink]="['../../','cart']"
                             class="btn btn-block btn-warning">
                             Add to Cart
                         </a>

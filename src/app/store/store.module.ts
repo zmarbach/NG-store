@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreRoutingModule } from './store-routing.module';
 
 import * as components from './components';
+import { BasketComponent } from '../shared/components';
 
 @NgModule({
   declarations: [
@@ -12,13 +13,14 @@ import * as components from './components';
     components.ProductDetailsComponent,
     components.ReviewListComponent,
     components.ReviewFormComponent,
-    components.CartComponent
+    BasketComponent
+    
   ],
   imports: [
     CommonModule,
     StoreRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class StoreModule { }

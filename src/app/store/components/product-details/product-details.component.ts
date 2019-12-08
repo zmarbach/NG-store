@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Product, IReview } from 'src/app/models';
@@ -25,6 +25,7 @@ export class ProductDetailsComponent implements OnInit {
 
   addNewReview(review: IReview){
     this.product.reviews.push(review);
+    // this.productService.addReview(this.productId, review);
   }
 
   addItemToCart(){

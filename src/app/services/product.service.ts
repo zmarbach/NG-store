@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product, IProduct } from '../models';
+import { Product, IProduct, IReview, Review } from '../models';
 
 import { environment } from '../../environments/environment';
 
@@ -29,4 +29,20 @@ export class ProductService {
       .then(product => new Product(product));
       }
   }
+
+  addReview(productId: number, review: IReview) :  Promise<IReview> {
+    return this.httpClient.post<IReview>(`${this.baseUrl}/${productId}/reviews`, review, {headers: new HttpHeaders().set('Authorization', environment.userName)})
+    .toPromise()
+    .then(response => new Review(response));
+
+  }
+
+  // addReview(product: Product) : Promise<Product> {
+  //   return this.httpClient.post<IProduct>(`${this.baseUrl}/${product.id}/reviews`, product, {headers: new HttpHeaders().set('Authorization', environment.userName)})
+  //   .toPromise()
+  //   .then(response => new Product(response));
+
+  // }
+
 }
+

@@ -1,0 +1,15 @@
+#cart-icon {
+    height: 50px;
+    width: auto;
+    margin-right: 1px;
+    padding-right: 1px;
+}
+
+.yellow-text{
+    color: gold;
+}
+
+.no-right {
+    margin-right: 1px;
+    padding-right: 1px;
+}
